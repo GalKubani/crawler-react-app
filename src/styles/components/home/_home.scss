@@ -3,10 +3,24 @@
     height: calc(100vh - 4rem);
     margin-top: 4rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     div{
         color: $myBlue;
-        font-size: 2rem;
+        font-size: 1rem;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 230px;
+    }
+    ul{
+        width: 100%;
+        height: fit-content;
+        overflow: scroll;
+        
+        li{
+            max-width: 40%;
+        }
     }
 }
