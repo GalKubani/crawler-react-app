@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ScrapedPageData from './ScrapedPageData'
 
-const ScrapedPage=({page})=>{
-    return(
-        <li>
-            <div>{page.pageTitle}</div> - 
-             in depth {page.pageDepth}</li>
+const ScrapedPage = ({ page }) => {
+    const [wasNodeClicked, setWasNodeClicked] = useState(false)
+    const onClick = (e) => {
+        e.preventDefault()
+        setWasNodeClicked(!wasNodeClicked)
+    }
+    return (
+        <div onClick={onClick}>
+            <div>{page.pageTitle}</div>
+            {wasNodeClicked ? <ScrapedPageData page={page} /> : ""}
+        </div>
+
     )
 
 }
